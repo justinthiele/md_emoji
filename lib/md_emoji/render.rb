@@ -27,9 +27,8 @@ module MdEmoji
         if MdEmoji::EMOJI.include?(emoji)
           file_name    = "#{emoji.gsub('+', 'plus')}.png"
           default_size = %{height="20" width="20"}
-          emoji_url = ActionController::Base.helpers.asset_url("emojis/#{file_name}")
 
-          %{<img src="#{emoji_url}" class="emoji" } +
+          %{<img src="https://www.reportedly.co/assets/emojis/#{file_name}" class="emoji" } +
             %{title="#{emoji_code}" alt="#{emoji_code}" #{default_size}>}
         else
           emoji_code
